@@ -1,0 +1,11 @@
+create table if not exists chief (
+	department text primary key,
+	cheif_name varchar(40) not null
+);
+
+create table if not exists employee (
+	id serial primary key,
+	employee_name varchar(40) not null,
+	department text references chief(department),
+	phone_number bigint(20)
+);
